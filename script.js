@@ -7,8 +7,8 @@ window.addEventListener("load", () => {
     e.preventDefault();
 
     const task = input.value;
-
-    const task_el = document.createElement("div");
+    if(task){
+      const task_el = document.createElement("div");
     task_el.classList.add("task");
 
     const task_content_el = document.createElement("div");
@@ -85,6 +85,9 @@ window.addEventListener("load", () => {
     task_status_toggle.addEventListener("change", (e) => {
       saveData();
     });
+    }else alert('Please add your todo')
+
+    
   });
 
   function saveData() {
